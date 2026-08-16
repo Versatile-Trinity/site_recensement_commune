@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <link rel="stylesheet" href="CSS/style_commun.css">
+    <link rel="stylesheet" href="CSS/style_acceuil.css">
+</head>
+<body>
+    <header>
+        <img src="Photos/Logos/lemur.png" class="logomaki" alt="Lémurien, symbole de Madagascar" title="Maki">
+        <h1>Enregistrement Citoyen pour la commune d'Antananarivo</h1>
+    </header>
+
+    <nav class="barre">
+        <a href="acceuil.html" class="actif"><span class="icone" aria-hidden="true">🏠</span>Accueil</a>
+        <a href="connexion.php"><span class="icone" aria-hidden="true">🔐</span>Connexion/Inscription</a>
+        <a href="data_visualisation.php"><span class="icone" aria-hidden="true">📊</span>Data Visualisation</a>
+        <a href="acceuil.html#listecontact"><span class="icone" aria-hidden="true">✉️</span>Contacts</a>
+        <a href="information.html"><span class="icone" aria-hidden="true">ℹ️</span>S'informer</a>
+        <a href="acceuil.html#legalsecurite"><span class="icone" aria-hidden="true">⚖️</span>Légal &amp; Sécurité</a>
+    </nav>
+
+    <main>
+        <section class="texte-intro">
+            <p>Ce site a été créé pour permettre à tout citoyen de s'enregistrer dans la base de données communale n'importe où n'importe quand.<br>
+            De plus le but de son existence est aussi de faciliter le recensement des habitants dans la division supérieure (commune) et les divisions inférieures (Fokontany).</p>
+        </section>
+
+        <section class="blocs-info">
+            <article class="carte">
+                <h2>Comment ça fonctionne ?</h2>
+                <p>Vous pouvez vous enregistrer et également enregistrer vos proches. Il vous suffit de renseigner vos informations d'état civil de base ; un agent communal validera ensuite votre dossier.</p>
+            </article>
+
+            <article class="carte">
+                <h2>Premier enregistrement ?</h2>
+                <p>Si vous n'êtes pas encore recensé dans notre système, vous pouvez entamer les démarches directement ici.</p>
+                <a href="connexion_inscription.php" class="bouton-action">S'enregistrer maintenant</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-top-bar"></div>
+        <div class="footer-colonnes">
+            <div class="colonne">
+                <h3 id="listecontact">Nous contacter</h3>
+                <ul>
+                    <li><a href="tel:+261330567496">📞 +261 33 05 674 96</a></li>
+                </ul>
+            </div>
+            <div class="colonne">
+                <h3>Démarches &amp; Justificatifs</h3>
+                <ul>
+                    <li><a href="information.html#guide">Guide d'utilisation</a></li>
+                </ul>
+            </div>
+            <div class="colonne" id="legalsecurite">
+                <h3>Légal &amp; Sécurité</h3>
+                <ul>
+                    <li><a href="information.html#confidentialite">Protection des données privées</a></li>
+                    <li><a href="information.html#mentions">Mentions légales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bas">
+            <p>&copy; 2026 Base de Données Communale - Antananarivo. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
