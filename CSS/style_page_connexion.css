@@ -1,0 +1,191 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e2e8f0;
+    /* Ton arrière-plan conservé */
+    background-image: linear-gradient(to right, rgba(14, 20, 31, 0.8), rgba(86, 169, 202, 0.4)), url("../Photos/Ville/skyview.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    min-height: 100vh;
+}
+
+
+
+header{
+     display: flex;
+    opacity: 0.8;
+    padding: 18px 32px;
+    gap: 20px;
+}
+h1{
+   text-align: center;   
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+
+.conteneur-page-inscription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.panneau-inscription {
+    background-color: #0b1120; /* Bleu nuit très sombre et opaque */
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(86, 169, 202, 0.2);
+}
+
+.panneau-inscription h2 {
+    margin-top: 0;
+    color: #f8fafc;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.sous-titre {
+    color: #94a3b8;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   SECTIONS ET GRILLES
+   ========================================= */
+.section-formulaire {
+    margin-bottom: 25px;
+}
+
+.section-formulaire h3 {
+    color: #f8fafc;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.grille-champs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes par défaut */
+    gap: 20px;
+}
+
+/* Permet à un champ de prendre toute la largeur (ex: Adresse) */
+.pleine-largeur {
+    grid-column: 1 / -1; 
+}
+
+.separateur {
+    border: 0;
+    height: 1px;
+    background-color: #1e293b;
+    margin: 30px 0;
+}
+
+/* =========================================
+   CHAMPS DE SAISIE (INPUTS & SELECTS)
+   ========================================= */
+.champ {
+    display: flex;
+    flex-direction: column;
+}
+
+.champ label, .champ-fichier label {
+    margin-bottom: 8px;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.champ label span, .champ-fichier label span {
+    color: #ef4444; /* Etoile rouge pour les champs obligatoires */
+}
+
+.champ input, .champ select {
+    padding: 14px;
+    background-color: #0f172a; /* Fond de l'input encore plus sombre */
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.champ input::placeholder {
+    color: #475569;
+}
+
+.champ input:focus, .champ select:focus {
+    outline: none;
+    border-color: #56a9ca; /* Bleu au focus */
+    background-color: #1e293b;
+    box-shadow: 0 0 0 3px rgba(86, 169, 202, 0.15);
+}
+
+/* =========================================
+   CHAMPS FICHIERS (CIN)
+   ========================================= */
+.champ-fichier {
+    background-color: #0f172a;
+    border: 1px dashed #334155;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+.champ-fichier:hover {
+    border-color: #56a9ca;
+}
+
+.champ-fichier input[type="file"] {
+    color: #94a3b8;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* =========================================
+   BOUTON DE SOUMISSION
+   ========================================= */
+.actions-formulaire {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.bouton-enregistrer {
+    background-color: #0284c7; /* Bleu principal */
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bouton-enregistrer:hover {
+    background-color: #0369a1; /* Bleu plus sombre au survol */
+}
+
+/* =========================================
+   RESPONSIVE (MOBILES ET TABLETTES)
+   ========================================= */
+@media (max-width: 768px) {
+    .grille-champs {
+        grid-template-columns: 1fr; /* Passe à 1 seule colonne sur petit écran */
+    }
+    
+    .panneau-inscription {
+        padding: 20px;
+    }
+}

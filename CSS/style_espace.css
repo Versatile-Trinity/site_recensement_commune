@@ -1,0 +1,181 @@
+
+
+main{
+    max-width: 900px;
+    margin: 24px auto 0;
+    padding: 0 24px 50px;
+}
+
+.entete-espace{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.entete-espace h2{
+    margin: 0;
+    font-family: var(--police-titre);
+    color: var(--bleu-accent-clair);
+}
+
+/* Barre utilitaire (espace citoyen) */
+.barre-utilitaire{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 14px 24px;
+    background: rgba(255,255,255,0.55);
+}
+.lien-retour{
+    color: var(--gris-nav);
+    text-decoration: none;
+    font-weight: 600;
+}
+.lien-retour:hover{ color: var(--bleu-accent); }
+.bouton-deconnexion{
+    background: var(--rouge-erreur);
+    color: #2a0b0b;
+}
+
+
+.entete-profil{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 40px 32px;
+    background: linear-gradient(135deg, var(--bleu-fonce), var(--bleu-fonce-2));
+    color: var(--blanc);
+}
+.avatar-citoyen{
+    flex: 0 0 auto;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: var(--bleu-accent);
+    color: #0b1a22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--police-titre);
+    font-size: 32px;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+}
+.avatar-admin{
+    background: var(--bleu-fonce-2);
+    border: 2px solid var(--bleu-accent);
+    font-size: 36px;
+}
+.info-profil h1{
+    margin: 0 0 10px;
+    font-family: var(--police-titre);
+    font-size: clamp(22px, 3vw, 30px);
+    color: var(--blanc);
+}
+
+/* Fiche en lecture seule */
+.liste-infos{ margin: 16px 0 20px; }
+.ligne-info{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.ligne-info dt{
+    margin: 0;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+}
+.ligne-info dd{
+    margin: 0;
+    font-weight: 600;
+    text-align: right;
+}
+
+/* Badges de statut */
+.badge-statut{
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+}
+.badge-en_attente{ background: rgba(255,193,7,0.2); color: #ffc107; }
+.badge-valide{ background: rgba(86,169,202,0.2); color: var(--bleu-accent-clair); }
+.badge-rejete{ background: rgba(255,128,128,0.2); color: var(--rouge-erreur); }
+.badge-info{ background: rgba(86,169,202,0.2); color: var(--bleu-accent-clair); }
+
+/* Mini-cartes de statistiques (espace admin) */
+.stats-admin{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+.mini-stat{
+    flex: 1;
+    min-width: 130px;
+    border-radius: 8px;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+.mini-stat-nombre{
+    display: block;
+    font-family: var(--police-titre);
+    font-size: 26px;
+    font-weight: 700;
+}
+.mini-stat-libelle{
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+}
+.mini-stat-en_attente .mini-stat-nombre{ color: #ffc107; }
+.mini-stat-valide .mini-stat-nombre{ color: var(--bleu-accent-clair); }
+.mini-stat-rejete .mini-stat-nombre{ color: var(--rouge-erreur); }
+
+/* Tableau des dossiers (admin) */
+.tableau-dossiers{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.tableau-dossiers th,
+.tableau-dossiers td{
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+}
+.tableau-dossiers th{
+    color: var(--bleu-accent-clair);
+    font-family: var(--police-titre);
+    font-size: 13px;
+    text-transform: uppercase;
+}
+.actions-dossier{
+    display: flex;
+    gap: 8px;
+}
+.actions-dossier form{ display: inline; }
+
+.bouton-mini{
+    padding: 6px 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: opacity .2s;
+}
+.bouton-mini:hover{ opacity: 0.85; }
+.bouton-valider{ background: #56ca8a; color: #0b1a22; }
+.bouton-rejeter{ background: var(--rouge-erreur); color: #2a0b0b; }
+
+@media (max-width: 700px){
+    .tableau-dossiers{ display: block; overflow-x: auto; white-space: nowrap; }
+}

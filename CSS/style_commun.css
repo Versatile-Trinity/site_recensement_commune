@@ -1,0 +1,269 @@
+/* =========================================================
+   STYLE COMMUN — Recensement Citoyen Antananarivo
+   Partagé par acceuil.html, connexion.html, connexion_inscription.html
+   ========================================================= */
+
+:root{
+    --bleu-accent:        #56a9ca;
+    --bleu-accent-clair:  #8ecbe3;
+    --bleu-fonce:         #16232e;
+    --bleu-fonce-2:       #1e3040;
+    --blanc:              #ffffff;
+    --texte-sombre:       #1b2836;
+    --gris-nav:           #35526b;
+    --rouge-erreur:       #ff8080;
+    --radius:             10px;
+    --ombre:              0 6px 18px rgba(0,0,0,0.25);
+    --police-titre:       'Courier New', Courier, monospace;
+    --police-texte:       'Segoe UI', Tahoma, sans-serif;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: var(--police-texte);
+    font-size: 15px;
+    color: var(--texte-sombre);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Même fond que ta page d'accueil : dégradé blanc -> bleu accent sur une photo de Ville.
+       Vérifie le nom exact du fichier dans Photos/Ville/ et ajuste-le si besoin. */
+    background-image: linear-gradient(to right, rgba(255,255,255,0.55), rgba(86,169,202,0.55)),
+                       url("../Photos/Ville/aboodi-vesakaran-1_P13_rP5yE-unsplash.jpg");
+}
+header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 32px;
+    opacity: 0.95;
+}
+.logomaki{
+    height: 70px;
+    width: auto;
+}
+header h1{
+    flex: 1;
+    margin: 0;
+    text-align: center;
+    font-family: var(--police-titre);
+    font-weight: 700;
+    font-size: clamp(20px, 2.6vw, 30px);
+    color: var(--bleu-fonce);
+}
+
+/* ---------- Barre de navigation ---------- */
+nav.barre{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 20px;
+    background: var(--bleu-fonce);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+nav.barre::after{
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--bleu-fonce-2), var(--bleu-accent), var(--bleu-accent-clair), var(--bleu-accent), var(--bleu-fonce-2));
+}
+nav.barre a{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background .2s, color .2s, transform .15s;
+}
+nav.barre a .icone{
+    font-size: 14px;
+    opacity: .85;
+}
+nav.barre a:hover{
+    background: rgba(255,255,255,0.1);
+    color: var(--blanc);
+    transform: translateY(-1px);
+}
+nav.barre a.actif{
+    background: var(--bleu-accent-clair);
+    color: #0b1a22;
+    font-weight: 700;
+}
+nav.barre a.actif:hover{ transform: none; }
+nav.barre .lien-desactive{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    color: rgba(255,255,255,0.35);
+    cursor: default;
+}
+
+.carte,
+.boite-sombre{
+    background: linear-gradient(160deg, var(--bleu-fonce), var(--bleu-fonce-2));
+    color: var(--blanc);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    box-shadow: var(--ombre);
+    padding: 28px 30px;
+}
+.carte h2,
+.boite-sombre h2{
+    margin-top: 0;
+    font-family: var(--police-titre);
+    color: var(--bleu-accent-clair);
+}
+.sous-titre{
+    margin-top: -6px;
+    margin-bottom: 22px;
+    color: rgba(255,255,255,0.75);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ---------- Bouton d'action commun ---------- */
+.bouton-action{
+    display: inline-block;
+    margin-top: 16px;
+    padding: 11px 22px;
+    background: var(--bleu-accent);
+    color: #0b1a22;
+    font-weight: 700;
+    font-family: var(--police-texte);
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background .2s, transform .15s;
+}
+.bouton-action:hover{
+    background: var(--bleu-accent-clair);
+    transform: translateY(-1px);
+}
+.bouton-pleine-largeur{ width: 100%; text-align: center; }
+
+/* ---------- Champs de formulaire communs ---------- */
+.champ{
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.champ label{ font-weight: 600; font-size: 14px; }
+.champ label .obligatoire{ color: var(--rouge-erreur); }
+.champ input{
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: #ffffff;
+    font-size: 14px;
+    font-family: var(--police-texte);
+}
+.champ input:focus{
+    outline: 2px solid var(--bleu-accent);
+    outline-offset: 1px;
+}
+.message-erreur{
+    min-height: 16px;
+    margin: -8px 0 12px;
+    color: var(--rouge-erreur);
+    font-size: 13px;
+}
+.message-succes{
+    background: rgba(86,169,202,0.18);
+    border: 1px solid var(--bleu-accent);
+    color: var(--bleu-accent-clair);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+.message-erreur-liste{
+    background: rgba(255,128,128,0.12);
+    border: 1px solid var(--rouge-erreur);
+    border-radius: 6px;
+    padding: 10px 16px;
+    margin-bottom: 18px;
+}
+.message-erreur-liste ul{ margin: 0; padding-left: 18px; }
+.message-erreur-liste li{ color: var(--rouge-erreur); font-size: 13px; margin-bottom: 4px; }
+
+/* ---------- Pied de page ---------- */
+footer{ margin-top: 60px; }
+.footer-top-bar{
+    height: 6px;
+    background: linear-gradient(to right, var(--bleu-accent), var(--bleu-fonce));
+}
+.footer-colonnes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-around;
+    background: var(--bleu-fonce);
+    color: var(--blanc);
+    padding: 32px 24px;
+}
+.colonne h3{
+    font-family: var(--police-titre);
+    color: var(--bleu-accent-clair);
+    font-size: 16px;
+    letter-spacing: .5px;
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+.colonne ul{ list-style: none; margin: 0; padding: 0; }
+.colonne ul li{ margin-bottom: 10px; }
+.colonne a{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    padding-bottom: 2px;
+    transition: color .2s;
+}
+.colonne a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1.5px;
+    background: var(--bleu-accent-clair);
+    transition: width .25s ease;
+}
+.colonne a:hover{ color: var(--bleu-accent-clair); }
+.colonne a:hover::after{ width: 100%; }
+.footer-bas{
+    text-align: center;
+    padding: 14px;
+    background: var(--bleu-fonce-2);
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+}
+
+/* ---------- Lien de retour ---------- */
+.retour-accueil{
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    color: var(--gris-nav);
+    text-decoration: none;
+    font-size: 13px;
+}
+.retour-accueil:hover{ color: var(--bleu-accent); }
