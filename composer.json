@@ -1,0 +1,16 @@
+{
+    "name": "johan/recensement-citoyen",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Admin",
+            "email": "admin@antananarivo.mg"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^6.4"
+    },
+    "require": {
+        "symfony/validator": "^6.4"
+    }
+}
